@@ -7,7 +7,7 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (message.content === 'ping') {
-    	message.reply('string[] responses = { "back", "black"}');
+    	message.string[] responses = { "back", "black"};
   	}
 });
 
