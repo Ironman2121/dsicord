@@ -1,10 +1,11 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const bot = new Discord.Client();
 
 client.on('ready', () => {
     console.log('I am ready!');
 });
-
+bot.on("message", function (message)
+{
     var input = message.content.toUpperCase();
 
     if(input === "HELP")
@@ -12,11 +13,11 @@ client.on('ready', () => {
         let adminRoleObject = message.server.roles.get('name', 'admins');
         bot.sendMessage(message, `${adminRoleObject} are on the way!`);
     }
-
-client.on('message', message => {
-    if (message.content === 'ping') {
-    	message.toString("black", "back");
-  	}
+    
+    if(input === "PING")
+    {
+        bot.sendMessage(message, "Pong!");
+    }
 });
 
 // THIS  MUST  BE  THIS  WAY
